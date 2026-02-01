@@ -1,1 +1,12 @@
 <p>amazon-product-viewer works!</p>
+<div class="viewer-wrapper">
+  <div #canvasContainer class="canvas"></div>
+
+  <input type="file" accept=".glb,.gltf" (change)="onFileSelected($event)" class="file-input" />
+
+  <div class="info-panel" *ngIf="selectedHotspot">
+    <h3>{{ selectedHotspot.title }}</h3>
+    <p>{{ selectedHotspot.description }}</p>
+    <button (click)="selectedHotspot = null">Close</button>
+  </div>
+</div>

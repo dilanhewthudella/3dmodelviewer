@@ -1,1 +1,12 @@
-<app-product-viewer></app-product-viewer>
+<div class="tabs">
+  <button [class.active]="activeTab === 'product'" (click)="setTab('product')">
+    Product Viewer
+  </button>
+
+  <button [class.active]="activeTab === 'amazon'" (click)="setTab('amazon')">Amazon Viewer</button>
+</div>
+
+<div class="tab-content">
+  <app-product-viewer *ngIf="activeTab === 'product'"></app-product-viewer>
+  <app-amazon-product-viewer *ngIf="activeTab === 'amazon'"></app-amazon-product-viewer>
+</div>
