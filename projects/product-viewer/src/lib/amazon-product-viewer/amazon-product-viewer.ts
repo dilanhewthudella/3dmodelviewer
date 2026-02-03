@@ -1,16 +1,26 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  Input,
+  NgZone,
+  OnDestroy,
+  ViewChild,
+} from '@angular/core';
 import * as THREE from 'three';
 import { GLTFLoader, OrbitControls } from 'three-stdlib';
 
 @Component({
-  selector: 'app-amazon-product-viewer',
+  selector: 'lib-amazon-product-viewer',
   standalone: true,
-  imports: [CommonModule],
   templateUrl: './amazon-product-viewer.html',
-  styleUrl: './amazon-product-viewer.scss',
+  styleUrls: ['./amazon-product-viewer.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AmazonProductViewer implements AfterViewInit, OnDestroy {
+  @Input() modelUrl!: string;
   @ViewChild('canvasContainer', { static: true })
   container!: ElementRef<HTMLDivElement>;
 
@@ -129,7 +139,7 @@ export class AmazonProductViewer implements AfterViewInit, OnDestroy {
 
   private loadInitialModel() {
     const loader = new GLTFLoader();
-    loader.load('assets/models/scene.gltf', (gltf) => {
+    loader.load(this.modelUrl, (gltf) => {
       this.setModel(gltf.scene);
     });
   }

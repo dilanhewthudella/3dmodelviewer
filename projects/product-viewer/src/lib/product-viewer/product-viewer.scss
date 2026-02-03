@@ -1,0 +1,6 @@
+.viewer-container {
+  width: 100vw; // full width of viewport
+  height: 100vh; // full height of viewport
+  position: relative;
+  overflow: hidden; // prevents scrollbars from appearing
+}

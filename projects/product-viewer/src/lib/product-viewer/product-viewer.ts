@@ -1,15 +1,25 @@
-import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  NgZone,
+  OnDestroy,
+  ViewChild,
+} from '@angular/core';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 @Component({
-  selector: 'app-product-viewer',
+  selector: 'lib-product-viewer',
+  standalone: true,
   imports: [],
   templateUrl: './product-viewer.html',
   styleUrl: './product-viewer.scss',
 })
 export class ProductViewer implements AfterViewInit, OnDestroy {
+  @Input() modelUrl!: string;
   @ViewChild('canvasContainer', { static: true })
   container!: ElementRef<HTMLDivElement>;
   private scene!: THREE.Scene;
@@ -68,7 +78,7 @@ export class ProductViewer implements AfterViewInit, OnDestroy {
 
   private loadModel() {
     const loader = new GLTFLoader();
-    loader.load('assets/models/scene.gltf', (gltf) => {
+    loader.load(this.modelUrl, (gltf) => {
       const model = gltf.scene;
       model.scale.set(1, 1, 1);
       this.scene.add(model);

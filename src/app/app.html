@@ -7,6 +7,11 @@
 </div>
 
 <div class="tab-content">
-  <app-product-viewer *ngIf="activeTab === 'product'"></app-product-viewer>
-  <app-amazon-product-viewer *ngIf="activeTab === 'amazon'"></app-amazon-product-viewer>
+  @if (activeTab === 'product') {
+    <lib-product-viewer [modelUrl]="model"></lib-product-viewer>
+  }
+
+  @if (activeTab === 'amazon') {
+    <lib-amazon-product-viewer [modelUrl]="model"></lib-amazon-product-viewer>
+  }
 </div>
