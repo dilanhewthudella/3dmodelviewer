@@ -1,4 +1,9 @@
 # 3dmodelviewer
+![Angular](https://img.shields.io/badge/Angular-17+-DD0031?logo=angular)
+![Three.js](https://img.shields.io/badge/Three.js-WebGL-black?logo=three.js)
+![License](https://img.shields.io/github/license/your-username/your-repo)
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
 ## 🎥 Demo
 
 A simple demo application is included to showcase how the library can be consumed by a host Angular app.
@@ -8,11 +13,6 @@ A simple demo application is included to showcase how the library can be consume
 - Orbit controls (rotate / zoom)
 - Clean standalone component usage
 
-![Angular](https://img.shields.io/badge/Angular-17+-DD0031?logo=angular)
-![Three.js](https://img.shields.io/badge/Three.js-WebGL-black?logo=three.js)
-![License](https://img.shields.io/github/license/your-username/your-repo)
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 <img width="1864" height="938" alt="image" src="https://github.com/user-attachments/assets/a0908129-09a3-4484-9633-b1ac8ffeb98e" />
